@@ -1,0 +1,28 @@
+{% include 'flatpages/default.html' %}
+
+{% block title %}
+<center>
+    <h1><span style="color: #000080;"><strong>
+        {{ flatpage.title }}
+    </strong></span></h1>
+</center>
+<p></p>
+{% endblock title %}
+
+{% block content %}
+<center>
+    <hr />
+    <blockquote>
+        <p>Мы предоставляем:</p>
+        <p>1) Терминалы для мониторинга т/с;</p>
+        <p>2) Датчики уровня топлива;</p>
+        <p>3) Карты тахографа.</p>
+    </blockquote>
+    <p>&nbsp;</p>
+    <p><em>Кроме это, вы также можете обратится к нам с просьбой
+    отслеживания Ваших автомобилей в программе.</em></p>
+    {{ flatpage.content }}
+</center>
+<hr>
+
+{% endblock content %}
