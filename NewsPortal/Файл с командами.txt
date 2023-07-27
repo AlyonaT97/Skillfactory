@@ -1,0 +1,94 @@
+python manage.py makemigrations
+python manage.py migrate
+python manage.py shell
+from news.models import *
+
+1. Создать двух пользователей (с помощью метода User.objects.create_user(‘username’)). 
+    u1 = User.objects.create_user(username='Alena')
+    u2 = User.objects.create_user(username='Vladimir')
+
+2. Создать два объекта модели Author, связанные с пользователями. 
+
+    a1 = Author.objects.create(user=u1)
+    a2 = Author.objects.create(user=u2)
+
+3. Добавить 4 категории в модель Category.
+
+    c1 = Category.objects.create(theme='Происшествия')
+    c2 = Category.objects.create(theme='Наука и технологии')
+    c3 = Category.objects.create(theme='Культура')
+    c4 = Category.objects.create(theme='Экономика')
+
+4. Добавить 2 статьи и 1 новость.
+
+    art1 = Post.objects.create(post_type='article', headline='Технология и наука', post_author=a2)
+    art2 = Post.objects.create(post_type='article', headline='Антикризисные мероприятия в сфере налогового законодательства', post_author=a2). 
+    news1 = Post.objects.create(post_type='news', headline='Исследование: продолжительность сна зависит от страны проживания', post_author=a1)
+
+5. Присвоить им категории (как минимум в одной статье/новости должно быть не меньше 2 категорий).
+
+    art1.posts.add(c2)
+    art2.posts.add(c4)
+    news1.posts.add(c2)
+
+6. Создать как минимум 4 комментария к разным объектам модели Post (в каждом объекте должен быть как минимум один комментарий).
+
+    comment1 = Comment.objects.create(comment_text='Спасибо за обзор и анализ антикризисных налоговых мер', comments=art2, user_comment=u1)
+    comment2 = Comment.objects.create(comment_text='Без науки не может быть дальнейшего развития. Подобная стратегия безусловна нужна!', comments=art1, user_comment=u1)
+    comment3 = Comment.objects.create(comment_text='Теперь понятно, чтобы стать богаче, надо ложиться позже!', comments=news1, user_comment=u1)
+    comment4 = Comment.objects.create(comment_text='Корейцы решили вырвать у британцев эстафетную палочку и мчаться дальше. Скоро вместо британских учёных мы начнем слышать корейских ученых', comments=news1, user_comment=u2)
+
+7. Применяя функции like() и dislike() к статьям/новостям и комментариям, скорректировать рейтинги этих объектов.
+
+>>> art1.like()
+>>> art2.like()
+>>> news1.like()
+>>> news1.like()
+>>> art2.like()
+>>> art2.like()
+>>> art2.dislike()
+>>> news1.like()
+>>> news1.like()
+>>> news1.dislike()
+>>> art1.like()
+
+>>> comment1.like()
+>>> comment1.like()
+>>> comment2.like()
+>>> comment2.like()
+>>> comment2.like()
+>>> comment2.dislike()
+>>> comment3.dislike()
+>>> comment3.dislike()
+>>> comment3.like()
+>>> comment4.like()
+>>> comment4.dislike()
+>>> comment4.dislike()
+>>> comment4.like()
+>>> comment4.like()
+
+8. Обновить рейтинги пользователей.
+    a1.update_rating
+    a2.update_rating
+
+9. Вывести username и рейтинг лучшего пользователя (применяя сортировку и возвращая поля первого объекта).
+
+    Author.objects.filter().order_by('-rating').values('user__username’).first()
+{'user__username': 'Vladimir'}
+
+10. Вывести дату добавления, username автора, рейтинг, заголовок и превью лучшей статьи, основываясь на лайках/дислайках к этой статье.
+
+    po=Post.objects.order_by(‘-rating’).first()
+    Post.objects.order_by('-rating').values('post_time', 'post_author__user__username', 'rating', 'headline').first()
+    po.preview()
+
+11. Вывести все комментарии (дата, пользователь, рейтинг, текст) к этой статье.
+
+    po=Post.objects.order_by(‘-rating’).first()
+    comments = Comment.objects.filter(comments=po)
+    for comment in comments:
+...     print(comment.comment_time)
+...     print(comment.user_comment)
+...     print(comment.rating)
+...     print(comment.comment_text)
+
