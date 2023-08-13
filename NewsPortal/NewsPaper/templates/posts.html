@@ -15,7 +15,13 @@ News
         <input type="submit" value="Найти" />
     </form>
 
-    <h3>{{ posts|length }}</h3>
+    {% if is_not_author %}
+    <button> <a href="upgrade/"> Хочу стать автором! </a> </button>
+    {% endif %}
+
+    <h5>Добро пожаловать, {{ request.user }}</h5>
+
+    <h3> Количество новостей и статей: {{ posts|length }}</h3>
 
     <hr>
     {% if posts %}
