@@ -1,14 +1,14 @@
 from django.urls import reverse_lazy
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import Group
+from django.contrib.auth.models import Group, User
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.views.generic import (
     ListView, DetailView, UpdateView, CreateView, DeleteView
 )
 from .models import Post, Author
 from .filters import PostFilter
-from .forms import PostForm
+from .forms import PostForm, BaseRegisterForm
 
 
 class PostList(ListView):
@@ -24,13 +24,13 @@ class PostList(ListView):
         return context
 
 
-class PostDetail(DetailView, LoginRequiredMixin):
+class PostDetail(LoginRequiredMixin, DetailView):
     model = Post
     template_name = 'post.html'
     context_object_name = 'post'
 
 
-class PostSearch(ListView, LoginRequiredMixin):
+class PostSearch(LoginRequiredMixin, ListView):
     model = Post
     ordering = '-post_time'
     template_name = 'posts.html'
@@ -48,7 +48,7 @@ class PostSearch(ListView, LoginRequiredMixin):
         return context
 
 
-class PostCreate(CreateView, PermissionRequiredMixin):
+class PostCreate(PermissionRequiredMixin, CreateView):
     form_class = PostForm
     model = Post
     template_name = 'post_edit.html'
@@ -64,7 +64,7 @@ class PostCreate(CreateView, PermissionRequiredMixin):
         return super().form_valid(form)
 
 
-class PostUpdate(UpdateView, LoginRequiredMixin, PermissionRequiredMixin):
+class PostUpdate(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
     form_class = PostForm
     model = Post
     template_name = 'post_edit.html'
@@ -72,7 +72,7 @@ class PostUpdate(UpdateView, LoginRequiredMixin, PermissionRequiredMixin):
     permission_required = 'news.change_post'
 
 
-class PostDelete(DeleteView, PermissionRequiredMixin):
+class PostDelete(DeleteView):
     model = Post
     template_name = 'post_delete.html'
     success_url = reverse_lazy('post_list')
@@ -89,8 +89,10 @@ def became_author(request):
     return redirect('/posts/')
 
 
-
-
+class BaseRegisterView(CreateView):
+    model = User
+    form_class = BaseRegisterForm
+    success_url = '/posts/'
 
 
 
