@@ -19,6 +19,10 @@ News
     <button> <a href="upgrade/"> Хочу стать автором! </a> </button>
     {% endif %}
 
+    {% if is_not_subscriber %}
+    <button> <a href="{% url 'subscribe' category.id %}"> Подписаться </a> </button>
+    {% endif %}
+
     <h5>Добро пожаловать, {{ request.user }}</h5>
 
     <h3> Количество новостей и статей: {{ posts|length }}</h3>

@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'news',
     'accounts',
     'django_filters',
+    'django_apscheduler',
 ]
 
 MIDDLEWARE = [
@@ -154,3 +155,14 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 ACCOUNT_FORMS = {'signup': 'news.forms.CommonSignupForm'}
+
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'Cyrenova.Alyona@yandex.ru'
+EMAIL_HOST_PASSWORD = 'Nm7dpJu8'
+EMAIL_USE_SSL = True
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+APSCHEDULER_DATETIME_FORMAT = 'N j, Y, f:s a'
+APSCHEDULER_RUN_NOW_TIMEOUT = 25
