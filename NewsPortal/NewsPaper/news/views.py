@@ -1,5 +1,5 @@
 from django.urls import reverse_lazy
-from django.shortcuts import redirect, get_object_or_404
+from django.shortcuts import redirect, get_object_or_404, render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group, User
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
@@ -87,10 +87,9 @@ class BaseRegisterView(CreateView):
 
 class CategoryList(LoginRequiredMixin, ListView):
     model = Post
-    ordering = '-post_time'
     template_name = 'posts.html'
     context_object_name = 'posts'
-    paginate_by = 10
+    paginate_by = 5
 
     def get_queryset(self):
         self.post_category = Category.objects.get(pk=self.kwargs['pk'])
@@ -121,5 +120,6 @@ def subscribe(request, pk):
     user = request.user
     category = Category.objects.get(id=pk)
     category.subscribers.add(user)
-    return redirect('/posts/categories/'+str(pk)+'/')
+
+    return redirect('/posts/')
 

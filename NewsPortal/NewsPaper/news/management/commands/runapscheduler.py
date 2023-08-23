@@ -1,6 +1,7 @@
 import logging
+import datetime
 
-from django.conf import settings
+from NewsPaper import settings
 
 from apscheduler.schedulers.blocking import BlockingScheduler
 from apscheduler.triggers.cron import CronTrigger
@@ -8,19 +9,44 @@ from django.core.management.base import BaseCommand
 from django_apscheduler.jobstores import DjangoJobStore
 from django_apscheduler.models import DjangoJobExecution
 
-from django.core.mail import send_mail
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
+
+from news.models import Post, Category
 
 logger = logging.getLogger(__name__)
 
 
 # наша задача по выводу текста на экран
 def my_job():
-    send_mail(
-        'Job mail',
-        'hello from job!',
-        from_email='Cyrenova.Alyona@yandex.ru',
-        recipient_list=['cyrenova.al@gmail.com'],
-    )
+    today = datetime.datetime.now()
+    last_week = today - datetime.timedelta(days=7)
+    this_week_posts = Post.objects.filter(data_create__gt=last_week)
+    for category in Category.objects.all():
+        post_list = this_week_posts.filter(post_category=category)
+        if post_list:
+            subscribers = category.subscribers.values('username', 'email')
+            recipients = []
+            for subscriber in subscribers:
+                recipients.append(subscriber['email'])
+
+            html_content = render_to_string(
+                'news/daily_news.html',
+                {
+                    'link': f'{settings.SITE_URL}posts/',
+                    'posts': post_list,
+                }
+            )
+
+            msg = EmailMultiAlternatives(
+                subject='Статьи за неделю',
+                body='',
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                to=recipients,
+            )
+
+            msg.attach_alternative(html_content, 'text/html')
+            msg.send()
 
 
 # функция, которая будет удалять неактуальные задачи

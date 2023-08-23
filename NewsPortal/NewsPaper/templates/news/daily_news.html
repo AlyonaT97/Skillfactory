@@ -1,0 +1,16 @@
+{% extends 'flatpages/default.html' %}
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Уведомление</title>
+</head>
+<body>
+<h2>Здравствуйте! Новые статьи за неделю!</h2>
+<ul>
+  {% for new in news %}
+    <li><a href="{{ link }}{{ post.get_absolute_id }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
+</body>
+</html>

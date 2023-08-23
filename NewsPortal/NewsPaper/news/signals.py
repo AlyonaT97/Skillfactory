@@ -1,18 +1,19 @@
-from django.core.mail import mail_managers
-from django.db.models.signals import post_save
+from django.db.models.signals import m2m_changed
 from django.dispatch import receiver
 
-from .models import Post
+from .models import PostCategory
+from .tasks import send_notifications
 
-@receiver(post_save, sender=Post)
-def notify_managers_appointment(sender, instance, created, **kwargs):
-    if created:
-        subject = f'{instance.client_name} {instance.date.strftime("%d %m %Y")}'
-    else:
-        subject = f'Appointment change for {instance.client_name} {instance.date.strftime("%d %m %Y")}'
 
-    mail_managers(
-        subject=subject,
-        message=instance.message,
-    )
-    print(f'{instance.client_name} {instance.date.strftime("%d %m %Y")}')
+# @receiver(m2m_changed, sender=PostCategory)
+# def weekly_notify(sender, instance, **kwargs):
+#     if kwargs['action'] == 'post_add':
+#         categories = instance.post_category.all()
+#         subscribers: list[str] = []
+#         for category in categories:
+#             subscribers += category.subscribers.all()
+#
+#         subscribers_emails = [s.email for s in subscribers]
+#
+#         send_notifications(instance.preview(), instance.pk, instance.title, subscribers_emails)
+
