@@ -1,7 +1,7 @@
 import logging
 import datetime
 
-from NewsPaper import settings
+from django.conf import settings
 
 from apscheduler.schedulers.blocking import BlockingScheduler
 from apscheduler.triggers.cron import CronTrigger
@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 def my_job():
     today = datetime.datetime.now()
     last_week = today - datetime.timedelta(days=7)
-    this_week_posts = Post.objects.filter(data_create__gt=last_week)
+    this_week_posts = Post.objects.filter(post_time__gt=last_week)
     for category in Category.objects.all():
         post_list = this_week_posts.filter(post_category=category)
         if post_list:
@@ -34,7 +34,6 @@ def my_job():
                 'news/daily_news.html',
                 {
                     'link': f'{settings.SITE_URL}posts/',
-                    'posts': post_list,
                 }
             )
 

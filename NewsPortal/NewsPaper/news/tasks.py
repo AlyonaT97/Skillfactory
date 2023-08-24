@@ -1,33 +1,38 @@
+import datetime
+
+from django.conf import settings
+
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 
-from .models import Post
-from NewsPaper import settings
+from news.models import Post, Category
 
 
-def send_notifications(pk):
-    post = Post.object.get(pk=pk)
-    categories = post.post_category.all()
-    subscribers: list[str] = []
-    for category in categories:
-        subscribers += category.subscribers.all()
-    subscribers_emails = [s.email for s in subscribers]
+def weekly_notify():
+    today = datetime.datetime.now()
+    last_week = today - datetime.timedelta(days=7)
+    this_week_posts = Post.objects.filter(post_time__gt=last_week)
+    for category in Category.objects.all():
+        post_list = this_week_posts.filter(post_category=category)
+        if post_list:
+            subscribers = category.subscribers.values('username', 'email')
+            recipients = []
+            for subscriber in subscribers:
+                recipients.append(subscriber['email'])
 
-    html_content = render_to_string(
-        'email_created.html',
-        {
-            'post': post.preview(),
-            'link': f'{settings.SITE_URL}posts/{pk}'
-        }
-    )
+            html_content = render_to_string(
+                'news/daily_news.html',
+                {
+                    'link': f'{settings.SITE_URL}posts/',
+                }
+            )
 
-    msg = EmailMultiAlternatives(
-        subject='Новая статья уже на сайте',
-        body=post.article_text,
-        from_email=settings.EMAIL_HOST_USER,
-        to=subscribers_emails,
-    )
+            msg = EmailMultiAlternatives(
+                subject='Статьи за неделю',
+                body='',
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                to=recipients,
+            )
 
-    msg.attach_alternative(html_content, 'text/html')
-    msg.send()
-
+            msg.attach_alternative(html_content, 'text/html')
+            msg.send()
