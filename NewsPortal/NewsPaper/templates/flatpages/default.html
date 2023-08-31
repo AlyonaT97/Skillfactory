@@ -22,28 +22,35 @@
                         aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Главная</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/posts/">Новости и статьи</a>
-                        </li>
-                        {% if request.user.is_active %}
+
+                {% load cache %}
+                {% cache 100 menu %}
+
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="/posts/search/">Поиск</a>
+                                <a class="nav-link" href="#">Главная</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/accounts/logout/">Выйти</a>
+                                <a class="nav-link" href="/posts/">Новости и статьи</a>
                             </li>
-                        {% else %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="/accounts/login/">Войти/Зарегистрироваться</a>
-                            </li>
-                        {% endif %}
-                    </ul>
-                </div>
+                            {% if request.user.is_active %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/posts/search/">Поиск</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/accounts/logout/">Выйти</a>
+                                </li>
+                            {% else %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/accounts/login/">Войти/Зарегистрироваться</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+
+                {% endcache %}
+
             </div>
         </nav>
         <!-- Page content-->

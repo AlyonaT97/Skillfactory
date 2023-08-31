@@ -11,19 +11,14 @@ News
     <h1>Все новости и статьи</h1>
 
     {% load cache %}
-    {% cache 100 buttons %}
+    {% cache 100 search %}
 
-        {% if is_not_author %}
-        <button> <a href="upgrade/"> Хочу стать автором! </a> </button>
-        {% endif %}
-
-        {% if is_not_subscriber %}
-        <button> <a href="{% url 'subscribe' category.id %}"> Подписаться </a> </button>
-        {% endif %}
+        <form action="" method="get">
+            {{  filterset.form.as_p }}
+            <input type="submit" value="Найти" />
+        </form>
 
     {% endcache %}
-
-    <h5>Добро пожаловать, {{ request.user }}</h5>
 
     <h3> Количество новостей и статей: {{ posts|length }}</h3>
 
