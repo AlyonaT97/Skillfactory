@@ -24,3 +24,5 @@ urlpatterns = [
     path('categories/<int:pk>/', CategoryList.as_view(), name='category_list'),
     path('categories/<int:pk>/subscriber/', subscribe, name='subscribe'),
 ]
+
+
