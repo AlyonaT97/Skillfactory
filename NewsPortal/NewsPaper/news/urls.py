@@ -2,7 +2,7 @@ from django.urls import path
 from django.contrib.auth.views import LoginView, LogoutView
 from .views import (
     PostList, PostDetail, PostSearch, PostCreate, PostUpdate, PostDelete, CategoryList,
-    became_author, BaseRegisterView, subscribe)
+    became_author, BaseRegisterView, subscribe, Index)
 
 from django.views.decorators.cache import cache_page
 
@@ -23,6 +23,7 @@ urlpatterns = [
     path('upgrade/', became_author, name='became_author'),
     path('categories/<int:pk>/', CategoryList.as_view(), name='category_list'),
     path('categories/<int:pk>/subscriber/', subscribe, name='subscribe'),
+    path('example/', Index.as_view(), name='example'),
 ]
 
 

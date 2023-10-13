@@ -1,13 +1,15 @@
+from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.shortcuts import redirect, get_object_or_404
 from django.core.cache import cache
+from django.utils.translation import gettext as _
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group, User
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 
 from django.views.generic import (
-    ListView, DetailView, UpdateView, CreateView, DeleteView
+    ListView, DetailView, UpdateView, CreateView, DeleteView, View
 )
 
 from .models import Post, Author, Category
@@ -131,4 +133,12 @@ def subscribe(request, pk):
     category.subscribers.add(user)
 
     return redirect('/posts/')
+
+
+class Index(View):
+    def get(self, request):
+        string = _('Hello world!')
+
+        return HttpResponse(string)
+
 
