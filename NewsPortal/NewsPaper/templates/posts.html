@@ -2,38 +2,39 @@
 
 {% load custom_filters %}
 {% load custom_tags %}
+{% load i18n %}
 
 {% block title %}
 News
 {% endblock title %}
 
 {% block content %}
-    <h1>Все новости и статьи</h1>
+    <h1>{% trans "Все новости и статьи" %}</h1>
 
     {% load cache %}
     {% cache 100 buttons %}
 
         {% if is_not_author %}
-        <button> <a href="upgrade/"> Хочу стать автором! </a> </button>
+        <button> <a href="upgrade/">{% trans "Хочу стать автором" %}! </a> </button>
         {% endif %}
 
         {% if is_not_subscriber %}
-        <button> <a href="{% url 'subscribe' category.id %}"> Подписаться </a> </button>
+        <button> <a href="{% url 'subscribe' category.id %}">{% trans "Подписаться" %} </a> </button>
         {% endif %}
 
     {% endcache %}
 
-    <h5>Добро пожаловать, {{ request.user }}</h5>
+    <h5>{% trans "Добро пожаловать" %}, {{ request.user }}</h5>
 
-    <h3> Количество новостей и статей: {{ posts|length }}</h3>
+    <h3> {% trans "Количество новостей и статей" %}: {{ posts|length }}</h3>
 
     <hr>
     {% if posts %}
         <table>
             <tr>
-                <td><b>Заголовок</b></td>
-                <td><b>Дата публикации</b></td>
-                <td><b>Текст</b></td>
+                <td><b>{% trans "Заголовок" %}</b></td>
+                <td><b>{% trans "Дата публикации" %}</b></td>
+                <td><b>{% trans "Текст" %}</b></td>
             </tr>
             {% for post in posts %}
             <tr>
@@ -44,7 +45,7 @@ News
             {% endfor %}
         </table>
     {% else %}
-        <h2>Новостей нет!</h2>
+        <h2>{% trans "Новостей нет" %}!</h2>
     {% endif %}
 
     {# Добавляем пагинацию на страницу #}
@@ -69,5 +70,6 @@ News
             <a href="?{% url_replace page=page_obj.paginator.num_pages %}">{{ page_obj.paginator.num_pages }}</a>
         {% endif %}
     {% endif %}
+
 
 {% endblock content %}

@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.urls import reverse_lazy
-from django.shortcuts import redirect, get_object_or_404
+from django.shortcuts import redirect, get_object_or_404, render
 from django.core.cache import cache
 from django.utils.translation import gettext as _
 
@@ -139,6 +139,10 @@ class Index(View):
     def get(self, request):
         string = _('Hello world!')
 
-        return HttpResponse(string)
+        context = {
+            'string': string
+        }
+
+        return HttpResponse(render(request, 'posts.html', context))
 
 
