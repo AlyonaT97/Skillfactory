@@ -26,36 +26,36 @@ msgstr "Привет мир!"
 
 #: templates/posts.html:12
 msgid "Все новости и статьи"
-msgstr "All news and articles"
+msgstr ""
 
 #: templates/posts.html:18
 msgid "Хочу стать автором"
-msgstr "Want to become an author"
+msgstr ""
 
 #: templates/posts.html:22
 msgid "Подписаться"
-msgstr "Subscribe"
+msgstr ""
 
 #: templates/posts.html:27
 msgid "Добро пожаловать"
-msgstr "Welcome"
+msgstr ""
 
 #: templates/posts.html:29
 msgid "Количество новостей и статей"
-msgstr "Number of news and articles"
+msgstr ""
 
 #: templates/posts.html:35
 msgid "Заголовок"
-msgstr "Headline"
+msgstr ""
 
 #: templates/posts.html:36
 msgid "Дата публикации"
-msgstr "Date of publication"
+msgstr ""
 
 #: templates/posts.html:37
 msgid "Текст"
-msgstr "Text"
+msgstr ""
 
 #: templates/posts.html:48
 msgid "Новостей нет"
-msgstr "No news"
+msgstr ""

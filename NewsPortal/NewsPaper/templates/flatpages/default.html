@@ -47,21 +47,21 @@
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Главная}</a>
+                                <a class="nav-link" href="#">{% trans "Главная" %}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/posts/">Новости и статьи</a>
+                                <a class="nav-link" href="/posts/">{% trans "Новости и статьи" %}</a>
                             </li>
                             {% if request.user.is_active %}
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/posts/search/">Поиск</a>
+                                    <a class="nav-link" href="/posts/search/">{% trans "Поиск" %}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/accounts/logout/">Выйти</a>
+                                    <a class="nav-link" href="/accounts/logout/">{% trans "Выйти" %}</a>
                                 </li>
                             {% else %}
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/accounts/login/">Войти/Зарегистрироваться</a>
+                                    <a class="nav-link" href="/accounts/login/">{% trans "Войти/Зарегистрироваться" %}</a>
                                 </li>
                             {% endif %}
                         </ul>

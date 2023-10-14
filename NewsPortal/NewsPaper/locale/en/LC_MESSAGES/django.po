@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-14 07:55+0000\n"
+"POT-Creation-Date: 2023-10-14 08:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,43 +17,62 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
 #: news/views.py:140
 msgid "Hello world!"
 msgstr ""
 
+#: templates/flatpages/default.html:50
+msgid "Главная"
+msgstr "Main"
+
+#: templates/flatpages/default.html:53
+msgid "Новости и статьи"
+msgstr "News and articles"
+
+#: templates/flatpages/default.html:57
+msgid "Поиск"
+msgstr "Search"
+
+#: templates/flatpages/default.html:60
+msgid "Выйти"
+msgstr "Log out"
+
+#: templates/flatpages/default.html:64
+msgid "Войти/Зарегистрироваться"
+msgstr "Log in/Sign in"
+
 #: templates/posts.html:12
 msgid "Все новости и статьи"
-msgstr ""
+msgstr "All posts"
 
 #: templates/posts.html:18
 msgid "Хочу стать автором"
-msgstr ""
+msgstr "Want to become an author"
 
 #: templates/posts.html:22
 msgid "Подписаться"
-msgstr ""
+msgstr "Subscribe"
 
 #: templates/posts.html:27
 msgid "Добро пожаловать"
-msgstr ""
+msgstr "Welcome"
 
 #: templates/posts.html:29
 msgid "Количество новостей и статей"
-msgstr ""
+msgstr "Number of news and articles"
 
 #: templates/posts.html:35
 msgid "Заголовок"
-msgstr ""
+msgstr "Headline"
 
 #: templates/posts.html:36
 msgid "Дата публикации"
-msgstr ""
+msgstr "Date of publication"
 
 #: templates/posts.html:37
 msgid "Текст"
-msgstr ""
+msgstr "Text"
 
 #: templates/posts.html:48
 msgid "Новостей нет"
-msgstr ""
+msgstr "No posts"

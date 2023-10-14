@@ -21,7 +21,7 @@ class PostList(ListView):
     model = Post
     ordering = '-post_time'
     template_name = 'posts.html'
-    context_object_name = 'posts'
+    context_object_name = _('posts')
     paginate_by = 10
 
     def get_context_data(self, **kwargs):
@@ -46,7 +46,7 @@ class PostSearch(LoginRequiredMixin, ListView):
     model = Post
     ordering = '-post_time'
     template_name = 'post_search.html'
-    context_object_name = 'posts'
+    context_object_name = _('posts')
     paginate_by = 5
 
     def get_queryset(self):
@@ -100,7 +100,7 @@ class BaseRegisterView(CreateView):
 class CategoryList(LoginRequiredMixin, ListView):
     model = Post
     template_name = 'posts.html'
-    context_object_name = 'posts'
+    context_object_name = _('posts')
     paginate_by = 5
 
     def get_queryset(self):
@@ -135,14 +135,14 @@ def subscribe(request, pk):
     return redirect('/posts/')
 
 
-class Index(View):
-    def get(self, request):
-        string = _('Hello world!')
-
-        context = {
-            'string': string
-        }
-
-        return HttpResponse(render(request, 'posts.html', context))
+# class Index(View):
+#     def get(self, request):
+#         string = _('Hello world!')
+#
+#         context = {
+#             'string': string
+#         }
+#
+#         return HttpResponse(render(request, 'posts.html', context))
 
 
