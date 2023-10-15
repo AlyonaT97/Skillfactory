@@ -23,7 +23,6 @@ urlpatterns = [
     path('upgrade/', became_author, name='became_author'),
     path('categories/<int:pk>/', CategoryList.as_view(), name='category_list'),
     path('categories/<int:pk>/subscriber/', subscribe, name='subscribe'),
-    # path('example/', Index.as_view(), name='example'),
 ]
 
 

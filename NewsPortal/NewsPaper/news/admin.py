@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Post, Category, Author
+from .models import Post, Category, Author, Comment
+from modeltranslation.admin import TranslationAdmin
 
 
 class AuthorAdmin(admin.ModelAdmin):
@@ -20,7 +21,31 @@ class CategoryAdmin(admin.ModelAdmin):
     list_filter = ['theme']
 
 
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('comment_text', 'rating')
+    list_filter = ('comment_text', 'rating')
+
+
+
+class CategoriesAdmin(TranslationAdmin):
+    model = Category
+
+
+class PostsAdmin(TranslationAdmin):
+    model = Post
+
+
+class CommentsAdmin(TranslationAdmin):
+    model = Comment
+
+
 admin.site.register(Post, PostAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Author, AuthorAdmin)
+admin.site.register(Comment, CommentAdmin)
+
+
+
+
+
 

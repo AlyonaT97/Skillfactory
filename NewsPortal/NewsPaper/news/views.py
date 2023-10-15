@@ -2,7 +2,10 @@ from django.http import HttpResponse
 from django.urls import reverse_lazy
 from django.shortcuts import redirect, get_object_or_404, render
 from django.core.cache import cache
+from django.utils import timezone
 from django.utils.translation import gettext as _
+from django.utils.translation import activate, get_supported_language_variant
+    # LANGUAGE_SESSION_KEY
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group, User
@@ -15,6 +18,8 @@ from django.views.generic import (
 from .models import Post, Author, Category
 from .filters import PostFilter
 from .forms import PostForm, BaseRegisterForm
+
+import pytz
 
 
 class PostList(ListView):
@@ -135,14 +140,25 @@ def subscribe(request, pk):
     return redirect('/posts/')
 
 
-# class Index(View):
-#     def get(self, request):
-#         string = _('Hello world!')
-#
-#         context = {
-#             'string': string
-#         }
-#
-#         return HttpResponse(render(request, 'posts.html', context))
+class Index(View):
+    def get(self, request):
+
+        current_time = timezone.now()
+
+        models = Post.objects.all()
+
+        context = {
+            'models': models,
+            'current_time': current_time,
+            'timezones': pytz.common_timezones,
+        }
+
+        return HttpResponse(render(request, 'posts.html', context))
+
+    def post(self, request):
+        request.session['django_timezone'] = request.POST['timezone']
+        return redirect('/posts/')
+
+
 
 
