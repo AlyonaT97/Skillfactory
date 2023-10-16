@@ -1,11 +1,19 @@
 <!DOCTYPE html>
+
+{% load i18n %}
+{% load tz %}
+
 <html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Bare - Start Bootstrap Template</title>
+        <title>Новостной портал</title>
+
+        <style>
+            body {background-color: {% if current_time.hour >= 19 or current_time.hour <= 7 %} DarkSlateGrey {% else %} White {% endif %};}
+        </style>
 
         {% load static %}
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -13,9 +21,9 @@
     </head>
     <body>
         <!-- Responsive navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <nav class="navbar navbar-expand-lg navbar-light static-top" style="background-color: #87CEEB">
             <div class="container">
-                <a class="navbar-brand" href="#">Django flatpages</a>
+                <a class="navbar-brand" href="/posts/">{% trans "НОВОСТНОЙ ПОРТАЛ" %}</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarResponsive"
                         aria-controls="navbarResponsive" aria-expanded="false"
@@ -23,42 +31,6 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                {% load cache %}
-                {% cache 100 menu %}
-                {% load i18n %}
-                {% load tz %}
-
-
-                <form action="{% url 'set_language' %}" method="POST"> {% csrf_token %}
-                    <input type="hidden" name="next" value="{{ redirect_to }}">
-
-                    <select name="language" id="">
-                        {% get_available_languages as LANGUAGES %}
-                        {% get_language_info_list for LANGUAGES as languages %}
-
-                        {% for language in languages %}
-                            <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %} >
-                                {{ language.name_local }} - {{ language.code }}
-                            </option>
-                        {% endfor %}
-                    </select>
-                    <input type="submit" value="Установить">
-                </form>
-
-                {% get_current_timezone as TIME_ZONE %}
-                <form action="" method="POST">
-                    {% csrf_token %}
-                    <label for="timezone">Time zone:</label>
-                    <select name="timezone">
-                        {% for tz in timezones %}
-                        <option value="{{ tz }}" {% if tz == TIME_ZONE %} selected {% endif %}>{{ tz }}</option>
-                        {% endfor %}
-                    </select>
-                    <input type="submit" value="Установить">
-                </form>
-
-                {{ TIME_ZONE }}
-                {{ current_time|timezone:TIME_ZONE }}
 
                 {% for model in models %}
                 <div class="model-class">
@@ -69,28 +41,35 @@
 
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav ms-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">{% trans "Главная" %}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/posts/">{% trans "Новости и статьи" %}</a>
+                            <li class="nav-item"><font size="2">
+                                <a class="nav-link" href="/posts/" style="color:#000000">{% trans "Новости и статьи" %}</a>
+                            </font>
                             </li>
                             {% if request.user.is_active %}
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/posts/search/">{% trans "Поиск" %}</a>
+                                <li class="nav-item"><font size="2">
+                                    <a class="nav-link" href="/posts/search/" style="color:#000000">{% trans "Поиск" %}</a>
+                                </font>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/accounts/logout/">{% trans "Выйти" %}</a>
+                                <li class="nav-item"><font size="2">
+                                    <a class="nav-link" href="/posts/news/create/" style="color:#000000">{% trans "Создать новость" %}</a>
+                                </font>
+                                </li>
+                                <li class="nav-item"><font size="2">
+                                    <a class="nav-link" href="/posts/articles/create/" style="color:#000000">{% trans "Создать статью" %}</a>
+                                </font>
+                                </li>
+                                <li class="nav-item"><font size="2">
+                                    <a class="nav-link" href="/accounts/logout/" style="color:#000000">{% trans "Выйти" %}</a>
+                                </font>
                                 </li>
                             {% else %}
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/accounts/login/">{% trans "Войти/Зарегистрироваться" %}</a>
+                                <li class="nav-item"><font size="2">
+                                    <a class="nav-link" href="/accounts/login/" style="color:#000000">{% trans "Войти/Зарегистрироваться" %}</a>
+                                </font>
                                 </li>
                             {% endif %}
                         </ul>
                     </div>
-
-                {% endcache %}
 
             </div>
         </nav>
@@ -104,5 +83,37 @@
                 </div>
             </div>
         </div>
+
+        <form action="{% url 'set_language' %}" method="POST"> {% csrf_token %}
+            <input type="hidden" name="next" value="{{ redirect_to }}">
+
+            <select name="language" id="">
+                {% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages %}
+
+                {% for language in languages %}
+                    <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %} >
+                        {{ language.name_local }} - {{ language.code }}
+                    </option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Установить">
+        </form>
+
+        {% get_current_timezone as TIME_ZONE %}
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label for="timezone">{% trans "Часовой пояс" %}:</label>
+            <select name="timezone">
+                {% for tz in timezones %}
+                <option value="{{ tz }}" {% if tz == TIME_ZONE %} selected {% endif %}>{{ tz }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Установить">
+        </form>
+
+        {{ TIME_ZONE }}
+        {{ current_time|timezone:TIME_ZONE }}
+
     </body>
 </html>

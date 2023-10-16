@@ -2,10 +2,14 @@ from django import forms
 from allauth.account.forms import SignupForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import Group, User
-from .models import Post
+from .models import Post, Author, Category
 
 class PostForm(forms.ModelForm):
-    article_text = forms.CharField(min_length=20)
+    headline = forms.CharField(label='Заголовок')
+    article_text = forms.CharField(min_length=20, label='Текст новости')
+    post_author = forms.ModelChoiceField(queryset=Author.objects.all(), label='Автор', empty_label='Любой')
+    post_category=forms.ModelMultipleChoiceField(queryset=Category.objects.all(), label='Категория')
+
 
     class Meta:
         model = Post
@@ -37,4 +41,6 @@ class CommonSignupForm(SignupForm):
         common_group = Group.objects.get(name='common')
         common_group.user_set.add(user)
         return user
+
+
 

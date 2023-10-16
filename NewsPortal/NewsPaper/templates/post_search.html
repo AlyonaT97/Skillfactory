@@ -2,13 +2,15 @@
 
 {% load custom_filters %}
 {% load custom_tags %}
+{% load i18n %}
+{% load tz %}
 
 {% block title %}
 News
 {% endblock title %}
 
 {% block content %}
-    <h1>Все новости и статьи</h1>
+    <h1>{% trans "Поиск новостей" %}</h1>
 
     {% load cache %}
     {% cache 100 search %}
@@ -20,15 +22,15 @@ News
 
     {% endcache %}
 
-    <h3> Количество новостей и статей: {{ posts|length }}</h3>
+    <h6>{% trans "Количество новостей и статей" %}: {{ posts|length }}</h6>
 
     <hr>
     {% if posts %}
         <table>
             <tr>
-                <td><b>Заголовок</b></td>
-                <td><b>Дата публикации</b></td>
-                <td><b>Текст</b></td>
+                <td><b>{% trans "Заголовок" %}</b></td>
+                <td><b>{% trans "Дата публикации" %}</b></td>
+                <td><b>{% trans "Текст" %}</b></td>
             </tr>
             {% for post in posts %}
             <tr>
@@ -39,7 +41,7 @@ News
             {% endfor %}
         </table>
     {% else %}
-        <h2>Новостей нет!</h2>
+        <h2>{% trans "Новостей нет" %}!</h2>
     {% endif %}
 
     {# Добавляем пагинацию на страницу #}

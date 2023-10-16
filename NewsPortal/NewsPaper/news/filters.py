@@ -20,3 +20,5 @@ class PostFilter(FilterSet):
     class Meta:
         model = Post
         fields = ['headline', 'post_author', 'post_time']
+
+

@@ -28,16 +28,36 @@ class PostList(ListView):
     template_name = 'posts.html'
     context_object_name = _('posts')
     paginate_by = 10
+    form_class = PostForm
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['is_not_author'] = not self.request.user.groups.filter(name='authors').exists()
+        context['categories'] = Category.objects.all()
+        context['form'] = self.form_class()
+        context['current_time'] = timezone.now()
+        context['timezones'] = pytz.common_timezones
+
         return context
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if request.method == 'POST':
+            request.session['django_timezone'] = request.POST['timezone']
+            return redirect('post_list')
+
+        if form.is_valid():
+            form.save()
+
+        return super().get(request, *args, **kwargs)
 
 
 class PostDetail(LoginRequiredMixin, DetailView):
     template_name = 'post.html'
     queryset = Post.objects.all()
+    form_class = PostForm
+
     def get_object(self, *args, **kwargs):
         obj = cache.get(f'post-{self.kwargs["pk"]}', None)
 
@@ -47,12 +67,33 @@ class PostDetail(LoginRequiredMixin, DetailView):
 
         return obj
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = self.form_class()
+        context['current_time'] = timezone.now()
+        context['timezones'] = pytz.common_timezones
+
+        return context
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if request.method == 'POST':
+            request.session['django_timezone'] = request.POST['timezone']
+            return redirect('post_list')
+
+        if form.is_valid():
+            form.save()
+
+        return super().get(request, *args, **kwargs)
+
+
 class PostSearch(LoginRequiredMixin, ListView):
     model = Post
     ordering = '-post_time'
     template_name = 'post_search.html'
     context_object_name = _('posts')
     paginate_by = 5
+    form_class = PostForm
 
     def get_queryset(self):
         queryset = super().get_queryset()
@@ -62,7 +103,22 @@ class PostSearch(LoginRequiredMixin, ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['filterset'] = self.filterset
+        context['form'] = self.form_class()
+        context['current_time'] = timezone.now()
+        context['timezones'] = pytz.common_timezones
+
         return context
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if request.method == 'POST':
+            request.session['django_timezone'] = request.POST['timezone']
+            return redirect('post_search')
+
+        if form.is_valid():
+            form.save()
+
+        return super().get(request, *args, **kwargs)
 
 
 class PostCreate(PermissionRequiredMixin, CreateView):
@@ -80,6 +136,25 @@ class PostCreate(PermissionRequiredMixin, CreateView):
         post.save()
         return super().form_valid(form)
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = self.form_class()
+        context['current_time'] = timezone.now()
+        context['timezones'] = pytz.common_timezones
+
+        return context
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if request.method == 'POST':
+            request.session['django_timezone'] = request.POST['timezone']
+            return redirect('news_create')
+
+        if form.is_valid():
+            form.save()
+
+        return super().get(request, *args, **kwargs)
+
 
 class PostUpdate(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
     form_class = PostForm
@@ -94,6 +169,26 @@ class PostDelete(DeleteView):
     template_name = 'post_delete.html'
     success_url = reverse_lazy('post_list')
     permission_required = 'news.delete_post'
+    form_class = PostForm
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = self.form_class()
+        context['current_time'] = timezone.now()
+        context['timezones'] = pytz.common_timezones
+
+        return context
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if request.method == 'POST':
+            request.session['django_timezone'] = request.POST['timezone']
+            return redirect('post_list')
+
+        if form.is_valid():
+            form.save()
+
+        return super().get(request, *args, **kwargs)
 
 
 class BaseRegisterView(CreateView):
@@ -101,12 +196,32 @@ class BaseRegisterView(CreateView):
     form_class = BaseRegisterForm
     success_url = '/posts/'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = self.form_class()
+        context['current_time'] = timezone.now()
+        context['timezones'] = pytz.common_timezones
+
+        return context
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if request.method == 'POST':
+            request.session['django_timezone'] = request.POST['timezone']
+            return redirect('signup')
+
+        if form.is_valid():
+            form.save()
+
+        return super().get(request, *args, **kwargs)
+
 
 class CategoryList(LoginRequiredMixin, ListView):
     model = Post
     template_name = 'posts.html'
     context_object_name = _('posts')
     paginate_by = 5
+    form_class = PostForm
 
     def get_queryset(self):
         self.post_category = Category.objects.get(pk=self.kwargs['pk'])
@@ -117,8 +232,23 @@ class CategoryList(LoginRequiredMixin, ListView):
         context = super().get_context_data(**kwargs)
         category = get_object_or_404(Category, id=self.kwargs['pk'])
         context['is_not_subscriber'] = self.request.user not in category.subscribers.all()
+        context['form'] = self.form_class()
+        context['current_time'] = timezone.now()
+        context['timezones'] = pytz.common_timezones
         context['category'] = category
+
         return context
+
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if request.method == 'POST':
+            request.session['django_timezone'] = request.POST['timezone']
+            return redirect('post_list')
+
+        if form.is_valid():
+            form.save()
+
+        return super().get(request, *args, **kwargs)
 
 
 @login_required
@@ -149,15 +279,12 @@ class Index(View):
 
         context = {
             'models': models,
-            'current_time': current_time,
-            'timezones': pytz.common_timezones,
+            'current_time': timezone.now(),
+            'timezones': pytz.common_timezones
         }
 
         return HttpResponse(render(request, 'posts.html', context))
 
-    def post(self, request):
-        request.session['django_timezone'] = request.POST['timezone']
-        return redirect('/posts/')
 
 
 

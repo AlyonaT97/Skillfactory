@@ -567,3 +567,556 @@ django.db.utils.IntegrityError: duplicate key value violates unique constraint "
 DETAIL:  Key (user_id)=(1) already exists.
 
 2023-10-14 09:52:20,817 40 "GET /posts/upgrade/ HTTP/1.1" 500 148187 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 12:11:33,473 40 Internal Server Error: /posts/search/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 96: 'endcache'. Did you forget to register or load this tag?"), <traceback object at 0x7f87a876c300>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'endcache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 96: 'endcache'. Did you forget to register or load this tag?
+2023-10-16 12:11:33,478 40 "GET /posts/search/ HTTP/1.1" 500 183790 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 12:11:34,284 40 Internal Server Error: /posts/search/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 96: 'endcache'. Did you forget to register or load this tag?"), <traceback object at 0x7f87888d1dc0>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'endcache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 96: 'endcache'. Did you forget to register or load this tag?
+2023-10-16 12:11:34,285 40 "GET /posts/search/ HTTP/1.1" 500 183790 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 12:11:36,534 40 Internal Server Error: /posts/search/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 96: 'endcache'. Did you forget to register or load this tag?"), <traceback object at 0x7f87888fa640>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'endcache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 96: 'endcache'. Did you forget to register or load this tag?
+2023-10-16 12:11:36,535 40 "GET /posts/search/ HTTP/1.1" 500 183633 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 13:36:52,168 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 22: 'trans'. Did you forget to register or load this tag?"), <traceback object at 0x7fd8f0f68b00>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'trans'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 22: 'trans'. Did you forget to register or load this tag?
+2023-10-16 13:36:52,169 40 "GET /posts/ HTTP/1.1" 500 198279 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 13:36:52,880 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 22: 'trans'. Did you forget to register or load this tag?"), <traceback object at 0x7fd8e024a400>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'trans'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 22: 'trans'. Did you forget to register or load this tag?
+2023-10-16 13:36:52,880 40 "GET /posts/ HTTP/1.1" 500 198279 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 13:36:53,484 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 22: 'trans'. Did you forget to register or load this tag?"), <traceback object at 0x7fd8f0f8f240>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'trans'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 22: 'trans'. Did you forget to register or load this tag?
+2023-10-16 13:36:53,484 40 "GET /posts/ HTTP/1.1" 500 198279 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 13:36:54,773 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid block tag on line 22: 'trans'. Did you forget to register or load this tag?"), <traceback object at 0x7fd8f0fba4c0>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'trans'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 22: 'trans'. Did you forget to register or load this tag?
+2023-10-16 13:36:54,773 40 "GET /posts/ HTTP/1.1" 500 198122 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 14:54:35,606 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'AttributeError'>, AttributeError("'PostList' object has no attribute 'form_class'"), <traceback object at 0x7fc130044800>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 35, in get_context_data
+    context['form'] = self.form_class()
+AttributeError: 'PostList' object has no attribute 'form_class'
+2023-10-16 14:54:35,607 40 "GET /posts/ HTTP/1.1" 500 84776 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 14:54:36,816 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'AttributeError'>, AttributeError("'PostList' object has no attribute 'form_class'"), <traceback object at 0x7fc1416c8340>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 35, in get_context_data
+    context['form'] = self.form_class()
+AttributeError: 'PostList' object has no attribute 'form_class'
+2023-10-16 14:54:36,816 40 "GET /posts/ HTTP/1.1" 500 84776 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 15:04:36,485 40 Internal Server Error: /posts/search/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'AttributeError'>, AttributeError("'PostSearch' object has no attribute 'form_class'"), <traceback object at 0x7f7f105f5ec0>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 90, in post
+    form = self.form_class(request.POST)
+AttributeError: 'PostSearch' object has no attribute 'form_class'
+2023-10-16 15:04:36,486 40 "POST /posts/search/ HTTP/1.1" 500 80076 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 15:06:54,860 40 Internal Server Error: /posts/6 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'post_detail' with no arguments not found. 1 pattern(s) tried: ['posts/(?P<pk>[0-9]+)\\\\Z']"), <traceback object at 0x7f9d5005a400>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 82, in post
+    return redirect('post_detail')
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'post_detail' with no arguments not found. 1 pattern(s) tried: ['posts/(?P<pk>[0-9]+)\\Z']
+2023-10-16 15:06:54,862 40 "POST /posts/6 HTTP/1.1" 500 105267 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 15:15:22,959 40 Internal Server Error: /posts/categories/5/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'category_list' with no arguments not found. 1 pattern(s) tried: ['posts/categories/(?P<pk>[0-9]+)/\\\\Z']"), <traceback object at 0x7f7b70070bc0>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 251, in post
+    return redirect('category_list')
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category_list' with no arguments not found. 1 pattern(s) tried: ['posts/categories/(?P<pk>[0-9]+)/\\Z']
+2023-10-16 15:15:22,960 40 "POST /posts/categories/5/ HTTP/1.1" 500 100764 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 15:16:38,236 40 Internal Server Error: /posts/categories/5/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'category_list' with no arguments not found. 1 pattern(s) tried: ['posts/categories/(?P<pk>[0-9]+)/\\\\Z']"), <traceback object at 0x7fbc6046ae00>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 246, in post
+    return redirect('category_list')
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category_list' with no arguments not found. 1 pattern(s) tried: ['posts/categories/(?P<pk>[0-9]+)/\\Z']
+2023-10-16 15:16:38,237 40 "POST /posts/categories/5/ HTTP/1.1" 500 100742 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 15:16:44,440 40 Internal Server Error: /posts/categories/5/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'category_list' with no arguments not found. 1 pattern(s) tried: ['posts/categories/(?P<pk>[0-9]+)/\\\\Z']"), <traceback object at 0x7fbc30065080>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 246, in post
+    return redirect('category_list')
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category_list' with no arguments not found. 1 pattern(s) tried: ['posts/categories/(?P<pk>[0-9]+)/\\Z']
+2023-10-16 15:16:44,441 40 "POST /posts/categories/5/ HTTP/1.1" 500 100742 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 15:16:53,756 40 Internal Server Error: /posts/categories/6/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'category_list' with no arguments not found. 1 pattern(s) tried: ['posts/categories/(?P<pk>[0-9]+)/\\\\Z']"), <traceback object at 0x7fbc604baa00>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 246, in post
+    return redirect('category_list')
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'category_list' with no arguments not found. 1 pattern(s) tried: ['posts/categories/(?P<pk>[0-9]+)/\\Z']
+2023-10-16 15:16:53,757 40 "POST /posts/categories/6/ HTTP/1.1" 500 100743 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 15:18:02,425 40 Internal Server Error: /posts/news/6/delete/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'news_edit' with no arguments not found. 1 pattern(s) tried: ['posts/news/(?P<pk>[0-9]+)/edit/\\\\Z']"), <traceback object at 0x7ff6917f9280>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 186, in post
+    return redirect('news_edit')
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/shortcuts.py", line 48, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/shortcuts.py", line 145, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'news_edit' with no arguments not found. 1 pattern(s) tried: ['posts/news/(?P<pk>[0-9]+)/edit/\\Z']
+2023-10-16 15:18:02,426 40 "POST /posts/news/6/delete/ HTTP/1.1" 500 96199 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-14 08:22+0000\n"
+"POT-Creation-Date: 2023-10-16 13:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,62 +17,90 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: news/views.py:140
-msgid "Hello world!"
+
+#: news/views.py:29 news/views.py:54 news/views.py:108
+msgid "posts"
 msgstr ""
 
-#: templates/flatpages/default.html:50
-msgid "Главная"
-msgstr "Main"
+#: templates/flatpages/default.html:22
+msgid "НОВОСТНОЙ ПОРТАЛ"
+msgstr "NEWS PORTAL"
 
-#: templates/flatpages/default.html:53
+#: templates/flatpages/default.html:54
+msgid "Часовой пояс"
+msgstr "Time zone"
+
+#: templates/flatpages/default.html:76
 msgid "Новости и статьи"
 msgstr "News and articles"
 
-#: templates/flatpages/default.html:57
+#: templates/flatpages/default.html:80
 msgid "Поиск"
 msgstr "Search"
 
-#: templates/flatpages/default.html:60
+#: templates/flatpages/default.html:83
+msgid "Создать новость"
+msgstr "Create news"
+
+#: templates/flatpages/default.html:86
+msgid "Создать статью"
+msgstr "Create article"
+
+#: templates/flatpages/default.html:89
 msgid "Выйти"
 msgstr "Log out"
 
-#: templates/flatpages/default.html:64
+#: templates/flatpages/default.html:93
 msgid "Войти/Зарегистрироваться"
 msgstr "Log in/Sign in"
 
-#: templates/posts.html:12
+#: templates/post_delete.html:7
+msgid "Удаление новости или статьи"
+msgstr "Deleting news and articles"
+
+#: templates/post_delete.html:11
+msgid "Удаляем"
+msgstr "Delete"
+
+#: templates/post_edit.html:6 templates/posts.html:13
 msgid "Все новости и статьи"
 msgstr "All posts"
 
-#: templates/posts.html:18
-msgid "Хочу стать автором"
-msgstr "Want to become an author"
+#: templates/post_search.html:13
+msgid "Поиск новостей"
+msgstr "Search posts"
 
-#: templates/posts.html:22
-msgid "Подписаться"
-msgstr "Subscribe"
-
-#: templates/posts.html:27
-msgid "Добро пожаловать"
-msgstr "Welcome"
-
-#: templates/posts.html:29
+#: templates/post_search.html:25 templates/posts.html:30
 msgid "Количество новостей и статей"
 msgstr "Number of news and articles"
 
-#: templates/posts.html:35
+#: templates/post_search.html:31 templates/posts.html:36
 msgid "Заголовок"
 msgstr "Headline"
 
-#: templates/posts.html:36
+#: templates/post_search.html:32 templates/posts.html:37
 msgid "Дата публикации"
 msgstr "Date of publication"
 
-#: templates/posts.html:37
+#: templates/post_search.html:33 templates/posts.html:38
 msgid "Текст"
 msgstr "Text"
 
-#: templates/posts.html:48
+#: templates/post_search.html:44 templates/posts.html:49
 msgid "Новостей нет"
 msgstr "No posts"
+
+#: templates/posts.html:19
+msgid "Хочу стать автором"
+msgstr "Want to become an author"
+
+#: templates/posts.html:23
+msgid "Подписаться"
+msgstr "Subscribe"
+
+#: templates/posts.html:28
+msgid "Добро пожаловать"
+msgstr "Welcome"
+
+#~ msgid "Главная"
+#~ msgstr "Main"
