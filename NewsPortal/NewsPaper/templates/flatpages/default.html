@@ -12,7 +12,7 @@
         <title>Новостной портал</title>
 
         <style>
-            body {background-color: {% if current_time.hour >= 19 or current_time.hour <= 7 %} DarkSlateGrey {% else %} White {% endif %};}
+            body {background-color: {% if background_time.hour >= 19 or background_time.hour <= 7 %} DarkSlateGrey {% else %} White {% endif %};}
         </style>
 
         {% load static %}

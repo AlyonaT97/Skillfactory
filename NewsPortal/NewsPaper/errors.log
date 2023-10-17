@@ -1120,3 +1120,1043 @@ Traceback (most recent call last):
     raise NoReverseMatch(msg)
 django.urls.exceptions.NoReverseMatch: Reverse for 'news_edit' with no arguments not found. 1 pattern(s) tried: ['posts/news/(?P<pk>[0-9]+)/edit/\\Z']
 2023-10-16 15:18:02,426 40 "POST /posts/news/6/delete/ HTTP/1.1" 500 96199 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:07:00,871 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7f8998618680>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:07:00,874 40 "GET /posts/ HTTP/1.1" 500 89224 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:07:02,625 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7f8998638200>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:07:02,625 40 "GET /posts/ HTTP/1.1" 500 89060 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:08:02,269 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7f89985eb6c0>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:08:02,269 40 "GET /posts/ HTTP/1.1" 500 89060 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:08:04,325 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7f89b99eabc0>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:08:04,325 40 "GET /posts/ HTTP/1.1" 500 89060 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:08:05,985 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7f899865dd80>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:08:05,986 40 "GET /posts/ HTTP/1.1" 500 89060 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:08:07,156 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7f89985c6dc0>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:08:07,157 40 "GET /posts/ HTTP/1.1" 500 89060 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:08:08,300 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7f8998661a80>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:08:08,300 40 "GET /posts/ HTTP/1.1" 500 89060 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:08:09,278 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7f89b9943800>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:08:09,278 40 "GET /posts/ HTTP/1.1" 500 89060 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:08:34,065 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7f899866b5c0>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:08:34,066 40 "GET /posts/ HTTP/1.1" 500 89060 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:08:53,655 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7f89b99d3ec0>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime(timezone='now')
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:08:53,656 40 "GET /posts/ HTTP/1.1" 500 89241 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:08:55,427 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fc60006b9c0>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime(timezone='now')
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:08:55,428 40 "GET /posts/ HTTP/1.1" 500 89034 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:09:06,002 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fcac8058040>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime()
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:09:06,003 40 "GET /posts/ HTTP/1.1" 500 89028 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:09:06,572 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fcaf9266a00>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime()
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:09:06,572 40 "GET /posts/ HTTP/1.1" 500 89028 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:09:07,239 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fcaf9312540>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime()
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:09:07,239 40 "GET /posts/ HTTP/1.1" 500 89028 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:09:15,603 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fadb08c6e40>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime(timezone='now')
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:09:15,604 40 "GET /posts/ HTTP/1.1" 500 89034 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:09:16,216 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fadb08deb80>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime(timezone='now')
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:09:16,216 40 "GET /posts/ HTTP/1.1" 500 89034 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:09:16,778 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fad80dc3080>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime(timezone='now')
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:09:16,779 40 "GET /posts/ HTTP/1.1" 500 89034 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:09:22,522 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fc8486cdec0>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:09:22,523 40 "GET /posts/ HTTP/1.1" 500 89057 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:09:22,795 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fc859698100>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:09:22,796 40 "GET /posts/ HTTP/1.1" 500 89057 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:09:23,224 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fc85969b6c0>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:09:23,225 40 "GET /posts/ HTTP/1.1" 500 89057 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:13:58,999 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7f81a0e71e00>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime()
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:13:59,000 40 "GET /posts/ HTTP/1.1" 500 89204 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:14:00,501 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7f81a0ea6800>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime()
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:14:00,502 40 "GET /posts/ HTTP/1.1" 500 89203 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:18:23,090 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7f7b9805e240>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:18:23,091 40 "GET /posts/ HTTP/1.1" 500 89067 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:18:24,249 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7f7bc853a580>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:18:24,250 40 "GET /posts/ HTTP/1.1" 500 89068 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:18:25,146 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7f7bc85c57c0>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:18:25,146 40 "GET /posts/ HTTP/1.1" 500 89067 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:21:07,071 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7f7b98067b00>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:21:07,072 40 "GET /posts/ HTTP/1.1" 500 89066 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:21:07,681 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7f7bc843df40>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:21:07,682 40 "GET /posts/ HTTP/1.1" 500 89067 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:21:08,594 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7f7bc85bdd80>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:21:08,595 40 "GET /posts/ HTTP/1.1" 500 89067 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:21:09,496 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7f7bc853f480>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:21:09,496 40 "GET /posts/ HTTP/1.1" 500 89067 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:21:10,276 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7f7bc85e2800>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:21:10,277 40 "GET /posts/ HTTP/1.1" 500 89068 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:21:11,190 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7f7bc85de140>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:21:11,191 40 "GET /posts/ HTTP/1.1" 500 89068 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:21:18,718 40 Internal Server Error: /posts/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7f7bc85bd100>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 39, in get_context_data
+    context['current_time'] = timezone.now()
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:21:18,718 40 "GET /posts/ HTTP/1.1" 500 89028 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:22:40,500 40 Internal Server Error: /posts/search/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fbd41307b00>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 107, in get_context_data
+    context['current_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:22:40,500 40 "GET /posts/search/ HTTP/1.1" 500 88418 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:22:41,238 40 Internal Server Error: /posts/search/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fbd41318e00>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 107, in get_context_data
+    context['current_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:22:41,239 40 "GET /posts/search/ HTTP/1.1" 500 88418 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:22:41,552 40 Internal Server Error: /posts/search/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fbd30c8ed00>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 107, in get_context_data
+    context['current_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:22:41,552 40 "GET /posts/search/ HTTP/1.1" 500 88418 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:22:41,861 40 Internal Server Error: /posts/search/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fbd41332f80>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 107, in get_context_data
+    context['current_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:22:41,862 40 "GET /posts/search/ HTTP/1.1" 500 88418 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:23:13,619 40 Internal Server Error: /posts/search/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fbd30d07e80>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 107, in get_context_data
+    context['current_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:23:13,620 40 "GET /posts/search/ HTTP/1.1" 500 88261 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-16 16:23:14,525 40 Internal Server Error: /posts/search/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fbd413d6500>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 107, in get_context_data
+    context['current_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-16 16:23:14,526 40 "GET /posts/search/ HTTP/1.1" 500 88261 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-17 11:19:18,902 40 Internal Server Error: /posts/search/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fefb0054bc0>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 108, in get_context_data
+    context['background_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-17 11:19:18,903 40 "GET /posts/search/ HTTP/1.1" 500 88342 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-17 11:19:19,606 40 Internal Server Error: /posts/search/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fefe02ce940>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 108, in get_context_data
+    context['background_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-17 11:19:19,607 40 "GET /posts/search/ HTTP/1.1" 500 88342 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-17 11:19:20,644 40 Internal Server Error: /posts/search/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fefe02e3940>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 108, in get_context_data
+    context['background_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-17 11:19:20,644 40 "GET /posts/search/ HTTP/1.1" 500 88342 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-17 11:19:22,236 40 Internal Server Error: /posts/search/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fefe0316740>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 108, in get_context_data
+    context['background_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-17 11:19:22,237 40 "GET /posts/search/ HTTP/1.1" 500 88342 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-17 11:19:23,224 40 Internal Server Error: /posts/search/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fefe0324a80>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 108, in get_context_data
+    context['background_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-17 11:19:23,225 40 "GET /posts/search/ HTTP/1.1" 500 88342 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-17 11:19:24,121 40 Internal Server Error: /posts/search/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fefc00915c0>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 108, in get_context_data
+    context['background_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-17 11:19:24,121 40 "GET /posts/search/ HTTP/1.1" 500 88340 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-17 11:19:31,071 40 Internal Server Error: /posts/search/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fefe031c740>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 108, in get_context_data
+    context['background_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-17 11:19:31,071 40 "GET /posts/search/ HTTP/1.1" 500 88340 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-17 11:20:20,762 40 Internal Server Error: /posts/search/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fefe0337680>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 108, in get_context_data
+    context['background_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-17 11:20:20,763 40 "GET /posts/search/ HTTP/1.1" 500 88342 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-17 11:20:22,244 40 Internal Server Error: /posts/search/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fefe02ce240>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 108, in get_context_data
+    context['background_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-17 11:20:22,244 40 "GET /posts/search/ HTTP/1.1" 500 88342 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-17 11:20:22,635 40 Internal Server Error: /posts/search/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fefe032d780>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 108, in get_context_data
+    context['background_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-17 11:20:22,635 40 "GET /posts/search/ HTTP/1.1" 500 88342 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-17 11:20:22,995 40 Internal Server Error: /posts/search/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fefe02b04c0>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 108, in get_context_data
+    context['background_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-17 11:20:22,996 40 "GET /posts/search/ HTTP/1.1" 500 88342 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-17 11:20:45,486 40 Internal Server Error: /posts/search/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fefc0071640>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 108, in get_context_data
+    context['background_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-17 11:20:45,487 40 "GET /posts/search/ HTTP/1.1" 500 88342 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-17 11:20:45,878 40 Internal Server Error: /posts/search/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fefe0311640>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 108, in get_context_data
+    context['background_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-17 11:20:45,878 40 "GET /posts/search/ HTTP/1.1" 500 88342 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None
+2023-10-17 11:20:46,249 40 Internal Server Error: /posts/search/ /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/log.py (<class 'ValueError'>, ValueError('localtime() cannot be applied to a naive datetime'), <traceback object at 0x7fefe02d3780>)
+Traceback (most recent call last):
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
+    context = self.get_context_data()
+  File "/Users/alena/PycharmProjects/NewsPortal/NewsPaper/news/views.py", line 108, in get_context_data
+    context['background_time'] = timezone.localtime(timezone.now())
+  File "/Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/utils/timezone.py", line 218, in localtime
+    raise ValueError("localtime() cannot be applied to a naive datetime")
+ValueError: localtime() cannot be applied to a naive datetime
+2023-10-17 11:20:46,249 40 "GET /posts/search/ HTTP/1.1" 500 88342 /Users/alena/PycharmProjects/NewsPortal/venv/lib/python3.8/site-packages/django/core/servers/basehttp.py None

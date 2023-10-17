@@ -36,7 +36,7 @@ class PostList(ListView):
         context['is_not_author'] = not self.request.user.groups.filter(name='authors').exists()
         context['categories'] = Category.objects.all()
         context['form'] = self.form_class()
-        context['current_time'] = timezone.now()
+        context['current_time'] = timezone.localtime(timezone.now())
         context['timezones'] = pytz.common_timezones
 
         return context
@@ -105,6 +105,7 @@ class PostSearch(LoginRequiredMixin, ListView):
         context['filterset'] = self.filterset
         context['form'] = self.form_class()
         context['current_time'] = timezone.now()
+        context['background_time'] = timezone.localtime(timezone.now())
         context['timezones'] = pytz.common_timezones
 
         return context
