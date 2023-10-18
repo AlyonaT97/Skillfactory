@@ -70,7 +70,7 @@ class PostDetail(LoginRequiredMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['form'] = self.form_class()
-        context['current_time'] = timezone.now()
+        context['current_time'] = timezone.localtime(timezone.now())
         context['timezones'] = pytz.common_timezones
 
         return context
@@ -104,8 +104,7 @@ class PostSearch(LoginRequiredMixin, ListView):
         context = super().get_context_data(**kwargs)
         context['filterset'] = self.filterset
         context['form'] = self.form_class()
-        context['current_time'] = timezone.now()
-        context['background_time'] = timezone.localtime(timezone.now())
+        context['current_time'] = timezone.localtime(timezone.now())
         context['timezones'] = pytz.common_timezones
 
         return context
@@ -140,7 +139,7 @@ class PostCreate(PermissionRequiredMixin, CreateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['form'] = self.form_class()
-        context['current_time'] = timezone.now()
+        context['current_time'] = timezone.localtime(timezone.now())
         context['timezones'] = pytz.common_timezones
 
         return context
@@ -175,7 +174,7 @@ class PostDelete(DeleteView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['form'] = self.form_class()
-        context['current_time'] = timezone.now()
+        context['current_time'] = timezone.localtime(timezone.now())
         context['timezones'] = pytz.common_timezones
 
         return context
@@ -200,7 +199,7 @@ class BaseRegisterView(CreateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['form'] = self.form_class()
-        context['current_time'] = timezone.now()
+        context['current_time'] = timezone.localtime(timezone.now())
         context['timezones'] = pytz.common_timezones
 
         return context
@@ -234,7 +233,7 @@ class CategoryList(LoginRequiredMixin, ListView):
         category = get_object_or_404(Category, id=self.kwargs['pk'])
         context['is_not_subscriber'] = self.request.user not in category.subscribers.all()
         context['form'] = self.form_class()
-        context['current_time'] = timezone.now()
+        context['current_time'] = timezone.localtime(timezone.now())
         context['timezones'] = pytz.common_timezones
         context['category'] = category
 
