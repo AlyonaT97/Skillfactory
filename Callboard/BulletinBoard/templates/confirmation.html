@@ -1,0 +1,16 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_tags %}
+
+{% block content %}
+    <h5>{{ user.username }} комментарий принят!</h5>
+
+    <hr>
+    <style>
+    /* Стили кнопки */
+    .main_button{display: inline-block;cursor: pointer; font-size:15px;text-decoration:none;padding:10px 10px; color:#000000;background:#FFFAFA;border-radius:5px;border:1px solid #000000;}
+    .main_button:hover{background:#4d4d4d;color:#ffffff;border:1px solid #000000;transition: all 0.2s ease;}
+    </style>
+    <div align="center"><a class="main_button" href="{% url 'comments' %}" title="Мои комментарии">Мои комментарии</a></div>
+
+{% endblock content %}

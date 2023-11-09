@@ -11,7 +11,7 @@ class PostFilter(FilterSet):
         label='Позже указанной даты',
         widget=forms.DateInput(attrs={'type': 'date'})
     )
-    category = ModelChoiceFilter(
+    category_post = ModelChoiceFilter(
         queryset=Category.objects.all(),
         label='По категории',
         empty_label='Любой'
@@ -19,8 +19,4 @@ class PostFilter(FilterSet):
 
     class Meta:
         model = Post
-        fields = [
-            'headline',
-            'date_post',
-            'category'
-        ]
+        fields = ['headline', 'date_post', 'category_post']

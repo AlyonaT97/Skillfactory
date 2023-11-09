@@ -1,0 +1,17 @@
+{% extends 'flatpages/default.html' %}
+
+{% block content %}
+<h1>Комментарий</h1>
+<hr>
+<small class="fw-bold">Дата публикации: {{ comment.date_comment | date:"d.m.Y" }}</small>
+    <small class="text-muted">Автор: {{ comment.author_comment }}</small>
+    <small class="fw-bold">Объявление: "{{ comment.post_comment.headline }}"</small>
+    <p>{{ comment.text_comment | safe }}</p>
+    <style>
+    /* Стили кнопки */
+    .main_button_del{display: inline-block;cursor: pointer; font-size:15px;text-decoration:none;padding:10px 10px; color:#000000;background:#FFFAFA;border-radius:5px;border:1px solid #000000;}
+    .main_button_del:hover{background:#ff5454;color:#ffffff;border:1px solid #000000;transition: all 0.2s ease;}
+    </style>
+    <a class="main_button_del" href="{% url 'comments' %}" title="Вернуться">Вернуться</a>
+    <hr>
+{% endblock content %}

@@ -14,36 +14,33 @@
     </head>
     <body>
         <!-- Responsive navbar-->
-        <nav class="navbar navbar-expand-lg navbar-light static-top" style="background-color: dimgrey">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: lightblue">
             <div class="container">
-                <a class="navbar-brand" href="" style="color:white">ДОСКА ОБЪЯВЛЕНИЙ</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarResponsive"
-                        aria-controls="navbarResponsive" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <a class="navbar-brand" href="/">
+                    ДОСКА ОБЪЯВЛЕНИЙ</a>
+<!--                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--                     <span class="navbar-toggler-icon"></span>-->
+<!--                </button>-->
 
-
-                    <div class="collapse navbar-collapse" id="navbarResponsive">
-                        <ul class="navbar-nav ms-auto">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Объявления</a>
+                        </li>
+                        {% if request.user.is_active %}
                             <li class="nav-item">
-                                <a class="nav-link" href="" style="color:white">Объявления</a>
+                                <a class="nav-link active" aria-current="page" href="/profile/">Личный кабинет</a>
                             </li>
-                            {% if request.user.is_active %}
-                                <li class="nav-item"><
-                                    <a class="nav-link" href="/create/" style="color:white">Создать объявление</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/accounts/logout/" style="color:white">Выйти</a>
-                                </li>
-                            {% else %}
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/accounts/login/" style="color:white">Войти/Зарегистрироваться</a>
-                                </li>
-                            {% endif %}
-                        </ul>
-                    </div>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/accounts/logout/">{{ user.username }}, Выйти</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/accounts/login/">Войти/Зарегистрироваться</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
 
             </div>
         </nav>

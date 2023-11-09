@@ -1,0 +1,68 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_tags %}
+
+{% block title %}
+BulletinBoard
+{% endblock title %}
+
+{% block content %}
+    <h1 align="center">Мои комментарии</h1>
+
+    <hr>
+    {% if comments %}
+        <table>
+            {% for comment in comments %}
+                {% if comment.confirmation_comment is False %}
+                <small class="fw-bold">Дата: {{ comment.date_comment|date:'d.m.Y' }}</small>
+                <small class="text-muted">Автор: {{ comment.author_comment }}</small>
+                <p>Комментарий к {{ comment.post_comment|safe }}</p>
+                <style>
+                /* Стили кнопки */
+                .main_button_confirm{display: inline-block;cursor: pointer; font-size:15px;text-decoration:none;padding:10px 10px; color:#000000;background:#98FB98;border-radius:5px;border:1px solid #000000;}
+                .main_button_confirm:hover{background:#4d4d4d;color:#ffffff;border:1px solid #000000;transition: all 0.2s ease;}
+                </style>
+                <div align="center"><a class="main_button_confirm" href="{% url 'confirm_comment' pk=comment.pk %}" title="Принять">Принять</a></div>
+                <br>
+                <style>
+                /* Стили кнопки */
+                .main_button_reject{display: inline-block;cursor: pointer; font-size:15px;text-decoration:none;padding:10px 10px; color:#000000;background:#FFA07A;border-radius:5px;border:1px solid #000000;}
+                .main_button_reject:hover{background:#4d4d4d;color:#ffffff;border:1px solid #000000;transition: all 0.2s ease;}
+                </style>
+                <div align="center"><a class="main_button_reject" href="{% url 'confirm_comment' pk=comment.pk %}" title="Отклонить">Отклонить</a></div>
+                <br>
+                {% else %}
+                <small class="fw-bold">Дата: {{ comment.date_comment|date:'d.m.Y' }}</small>
+                <small class="text-muted">Автор: {{ comment.author_comment }}</small>
+                <p>Комментарий к {{ comment.post_comment|safe }}</p>
+                <p>{{ comment.text_comment }}</p>
+                {% endif %}
+            {% endfor %}
+    {% else %}
+        <h2>Комментариев нет!</h2>
+    {% endif %}
+
+    {# Добавляем пагинацию на страницу #}
+
+    {# Информация о предыдущих страницах #}
+    {% if page_obj.has_previous %}
+        <a href="?{% url_replace page=1 %}">1</a>
+        {% if page_obj.previous_page_number != 1 %}
+            ...
+            <a href="?{% url_replace page=page_obj.previous_page_number}">{{ page_obj.previous_page_number }}</a>
+        {% endif %}
+    {% endif %}
+
+    {# Информация о текущей странице #}
+    {{ page_obj.number }}
+
+    {# Информация о следующих страницах #}
+    {% if page_obj.has_next %}
+        <a href="?{% url_replace page=page_obj.next_page_number %}">{{ page_obj.next_page_number }}</a>
+        {% if paginator.num_pages != page_obj.next_page_number %}
+            ...
+            <a href="?{% url_replace page=page_obj.paginator.num_pages %}">{{ page_obj.paginator.num_pages }}</a>
+        {% endif %}
+    {% endif %}
+
+{% endblock content %}

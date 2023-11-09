@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.urls import reverse
 from ckeditor_uploader.fields import RichTextUploadingField
 
 
@@ -14,7 +15,7 @@ class Category(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return f'categories/{self.pk}'
+        return reverse('post_category', args=[str(self.ok)])
 
 
 class Post(models.Model):
@@ -40,6 +41,7 @@ class Comment(models.Model):
     author_comment = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Автор')
     date_comment = models.DateTimeField(auto_now_add=True, verbose_name='Дата')
     post_comment = models.ForeignKey(Post, on_delete=models.CASCADE, verbose_name='Комментарий')
+    confirmation_comment = models.BooleanField(default=False, verbose_name='Подтверждение')
 
     class Meta:
         verbose_name = 'Комментарий'
