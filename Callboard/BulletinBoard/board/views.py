@@ -1,23 +1,21 @@
-from django.shortcuts import redirect, render, HttpResponseRedirect
-from django.urls import reverse_lazy, reverse
-from django.utils import timezone
+from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.conf import settings
 
-from django.core.cache import cache
 from django.core.exceptions import PermissionDenied
 from django.core.mail import send_mail
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from django.views.generic import (ListView, DetailView, UpdateView, CreateView, DeleteView)
+from django.views.generic import (ListView, DetailView, UpdateView, CreateView, DeleteView, View)
 
 from django_filters.views import FilterView
 
 from .models import Post, Comment, User
 from .forms import PostForm, CommentForm
 from .filters import PostFilter
-from .tasks import post_create
+from .tasks import notify_about_new_post
 
 
 class Posts(ListView):
@@ -26,7 +24,6 @@ class Posts(ListView):
     template_name = 'posts.html'
     context_object_name = 'posts'
     paginate_by = 5
-
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -52,7 +49,7 @@ class PostCreate(LoginRequiredMixin, CreateView):
         if self.request.method == 'POST':
             post.author_post, created = User.objects.get_or_create(id=self.request.user.id)
             post.save()
-            post_create(post_comment_id=post.id)
+            notify_about_new_post(pk=post.id)
         return super().form_valid(form)
 
     def get_context_data(self, **kwargs):
@@ -83,7 +80,7 @@ class PostDelete(LoginRequiredMixin, DeleteView):
             raise PermissionDenied
 
 
-class Profile(ListView):
+class Profile(LoginRequiredMixin, ListView):
     model = Comment
     template_name = 'profile.html'
 
@@ -107,7 +104,7 @@ class Search(FilterView):
         return context
 
 
-class Comments(ListView):
+class Comments(LoginRequiredMixin, ListView):
     model = Comment
     template_name = 'comments.html'
     context_object_name = 'comments'
@@ -119,7 +116,7 @@ class Comments(ListView):
         return queryset
 
 
-class CommentCreate(CreateView):
+class CommentCreate(LoginRequiredMixin, CreateView):
     form_class = CommentForm
     model = Comment
     template_name = 'comment_create.html'
@@ -141,10 +138,11 @@ class CommentCreate(CreateView):
         return result
 
 
-class CommentDetail(DetailView):
+class CommentDetail(LoginRequiredMixin, DetailView):
     model = Comment
     template_name = 'comment.html'
     queryset = Comment.objects.all()
+    context_object_name = 'comment'
 
     def get_template_names(self):
         response = self.get_object()
@@ -175,4 +173,7 @@ def reject_comment(request, pk):
     comment.confirmation_comment = False
     comment.save()
     return render(request, 'comments')
+
+
+
 

@@ -16,8 +16,8 @@ BulletinBoard
 
     <hr>
     {% for n in filterset.qs %}
-        <small class="fw-bold">Дата: {{ n.date_post | date:"d.m.Y" }}</small>
-    <p>Объявление: <a href="{{ n.get_absolute_url }}">{{ n.headline }}</a></p>
+    <p class="fw-bold" align="left"><small>Дата: {{ n.date_post | date:"d.m.Y" }}</small></p>
+    <p align="left">Объявление: <a href="{{ n.get_absolute_url }}">{{ n.headline }}</a></p>
     <hr>
     {% endfor %}
 

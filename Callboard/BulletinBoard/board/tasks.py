@@ -9,12 +9,13 @@ from .models import Post
 
 
 @shared_task
-def post_create(post_comment_id):
-    post = Post.objects.get(pk=post_comment_id)
+def notify_about_new_post(pk):
+    post = Post.objects.get(pk=pk)
     html_content = render_to_string(
         'email_created.html',
         {
-            'link': f'{settings.SITE_URL}/{post_comment_id}'
+            'headline': post.headline,
+            'link': f'{settings.SITE_URL}/{pk}'
         }
     )
     msg = EmailMultiAlternatives(

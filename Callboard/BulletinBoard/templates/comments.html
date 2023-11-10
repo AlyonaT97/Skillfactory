@@ -35,7 +35,13 @@ BulletinBoard
                 <small class="fw-bold">Дата: {{ comment.date_comment|date:'d.m.Y' }}</small>
                 <small class="text-muted">Автор: {{ comment.author_comment }}</small>
                 <p>Комментарий к {{ comment.post_comment|safe }}</p>
-                <p>{{ comment.text_comment }}</p>
+<!--                <p>{{ comment.text_comment }}</p>-->
+                <style>
+                /* Стили кнопки */
+                .main_button{display: inline-block;cursor: pointer; font-size:15px;text-decoration:none;padding:10px 10px; color:#000000;background:#FFFAFA;border-radius:5px;border:1px solid #000000;}
+                .main_button:hover{background:#4d4d4d;color:#ffffff;border:1px solid #000000;transition: all 0.2s ease;}
+                </style>
+                <div align="center"><a class="main_button" href="{% url 'comment_detail' comment.id %}" title="Прочитать">Прочитать</a></div>
                 {% endif %}
             {% endfor %}
     {% else %}
